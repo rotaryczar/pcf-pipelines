@@ -152,7 +152,7 @@ cf_resources=$(
       "cloud_controller": {"internet_connected": $internet_connected},
       "cloud_controller_worker": {"internet_connected": $internet_connected},
       "consul_server": {"internet_connected": $internet_connected},
-      "credhub": {"instances": 2, "internet_connected": $internet_connected},
+      "credhub": {"internet_connected": $internet_connected},
       "diego_brain": {"internet_connected": $internet_connected},
       "diego_cell": {"internet_connected": $internet_connected},
       "diego_database": {"internet_connected": $internet_connected},
