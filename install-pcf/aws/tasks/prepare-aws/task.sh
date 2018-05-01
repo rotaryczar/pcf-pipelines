@@ -17,7 +17,8 @@ if [[ -n "${OPSMAN_ALLOW_HTTPS_CIDR_RANGES// }" ]]; then
   OPSMAN_ALLOW_HTTPS=1
   OPSMAN_ALLOW_HTTPS_CIDR_LIST='["'${OPSMAN_ALLOW_HTTPS_CIDR_RANGES//\,/\"\,\"}'"]'
 fi
-
+export TF_LOG=TRACE
+export TF_LOG=/tmp/tf.log
 terraform init pcf-pipelines/install-pcf/aws/terraform
 
 terraform plan \
