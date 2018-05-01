@@ -164,6 +164,8 @@ jobs:
       DB_LOCKET_PASSWORD: {{db_locket_password}}
       DB_SILK_USERNAME: {{db_silk_username}}
       DB_SILK_PASSWORD: {{db_silk_password}}
+      DB_CREDHUB_USERNAME: {{db_credhub_username}}
+      DB_CREDHUB_PASSWORD: {{db_credhub_password}
 
 - name: configure-director
   serial_groups: [opsman]
