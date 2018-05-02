@@ -4,8 +4,8 @@ platform: linux
 image_resource:
   type: docker-image
   source:
-    repository: rotaryczar/pcfnorm-v2
-    tag: release-candidate
+    repository: pcfnorm/rootfs
+    tag: v0.2.6
 inputs:
   - name: pcf-pipelines 
   - name: terraform-state
