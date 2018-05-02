@@ -72,7 +72,6 @@ jobs:
         type: docker-image
         source:
           repository: pcfnorm/rootfs
-          tag: v0.2.6
       inputs:
       - name: pivnet-opsmgr
       outputs:
