@@ -104,6 +104,9 @@ cf_properties=$(
       ".properties.system_blobstore": {
         "value": "internal"
       },
+      ".properties.cf_networking_enable_space_developer_self_service": {
+        "value": "true"
+      },
       ".properties.logger_endpoint_port": {
         "value": $loggregator_endpoint_port
       },
