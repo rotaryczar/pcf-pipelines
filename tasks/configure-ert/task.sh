@@ -263,6 +263,7 @@ cf_properties=$(
         }
       },
       ".properties.tcp_routing": { "value": "disable" },
+      ".properties.cf_networking_enable_space_developer_self_service": { "value": true },
       ".properties.route_services": { "value": "enable" },
       ".ha_proxy.skip_cert_verify": { "value": true },
       ".properties.container_networking_interface_plugin.silk.network_cidr": { "value": $container_networking_nw_cidr },
