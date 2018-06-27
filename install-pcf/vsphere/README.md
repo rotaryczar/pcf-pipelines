@@ -9,6 +9,11 @@ to be deployed on it.
 
 ## Prerequisites
 
+* [install a Concourse server](https://concourse-ci.org/installing.html)
+* download the [Fly CLI](https://concourse-ci.org/fly-cli.html) to interact with the Concourse server
+* depending on where you've installed Concourse, you may need to set up
+[additional firewall rules](FIREWALL.md "Firewall") to allow Concourse to reach
+third-party sources of pipeline dependencies
 * vSphere 6.x or greater
 * vSphere NSX 6.1 or greater
 * vCenter Account with the permissions as detailed in
@@ -65,6 +70,12 @@ to those.
 4. Unpause the pipeline in Concourse.
 
 5. Trigger the `deploy-opsman` job.
+
+
+
+## Known Issues
+
+- `ert_errands_to_disable` does not function as expected; use caution when toggling the errands functionality. Currently the only functionality that works is it disables or enables errands; the functionality to choose which errand to disable does not function as expected. 
 
 ## Troubleshooting
 
