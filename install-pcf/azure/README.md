@@ -6,6 +6,15 @@ This pipeline uses Terraform to create all the infrastructure required to run an
 HA PCF deployment on Azure per the Customer[0] [reference
 architecture](http://docs.pivotal.io/pivotalcf/1-10/refarch/azure/azure_ref_arch.html).
 
+## Prerequisites
+
+- [install a Concourse server](https://concourse-ci.org/installing.html)
+- download the [Fly CLI](https://concourse-ci.org/fly-cli.html) to interact with the Concourse server
+- depending on where you've installed Concourse, you may need to set up
+[additional firewall rules](FIREWALL.md "Firewall") to allow Concourse to reach
+third-party sources of pipeline dependencies
+- ensure you have set up DNS and certs correctly, for example, our pipelines require that you have set up the Ops Manager url with `opsman` as a prefix.
+
 ## Usage
 
 This pipeline downloads artifacts from DockerHub (pcfnorm/rootfs and custom
@@ -52,7 +61,7 @@ the `Contributor` Role on the target Azure Project.
      --location "WestUS" \
      --sku "Standard_LRS"
 
-   AZURE_ACCOUNT_KEY=$(az storage account keys list --account-name pcfci --resource-group pcfci | jq -r .[0].value)
+   AZURE_STORAGE_ACCOUNT_KEY=$(az storage account keys list --account-name pcfci --resource-group pcfci | jq -r .[0].value)
 
    az storage container create --name terraformstate \
      --account-name pcfci
@@ -65,8 +74,8 @@ the `Contributor` Role on the target Azure Project.
     - The sample pipeline params file includes 2 params that set the major/minor versions of
       OpsMan and ERT that will be pulled.  They will typically default to the latest available tiles.
       ```
-      opsman_major_minor_version: 2\.[0-9\]+\.[0-9]+$
-      ert_major_minor_version: 2\.[0-9\]+\.[0-9]+$ 
+      opsman_major_minor_version: ^2\.0\.[0-9]+$ # Ops Manager minor version to track (e.g ^2\.0\.[0-9]+$ will track 2.0.x versions)
+      ert_major_minor_version: ^2\.0\.[0-9]+$ # ERT minor version to track (e.g ^2\.0\.[0-9]+$ will track 2.0.x versions)
       ```
 
 5. Log into concourse and create the pipeline.
