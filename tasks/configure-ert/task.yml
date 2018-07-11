@@ -15,7 +15,7 @@ run:
 
 params:
   pcf_iaas:
-  DIEGO_CELL_INSTANCES:
+  diego_cell_instances:
   PCF_ERT_DOMAIN:
   SYSTEM_DOMAIN:
   APPS_DOMAIN:
