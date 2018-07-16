@@ -144,6 +144,7 @@ cf_resources=$(
   jq -n \
     --arg terraform_prefix $terraform_prefix \
     --arg iaas $pcf_iaas \
+    --argjson diego_cell_instances $DIEGO_CELL_INSTANCES \
     --argjson internet_connected $INTERNET_CONNECTED \
     '
     {
@@ -154,7 +155,7 @@ cf_resources=$(
       "consul_server": {"internet_connected": $internet_connected},
       "credhub": {"internet_connected": $internet_connected},
       "diego_brain": {"internet_connected": $internet_connected},
-      "diego_cell": {"internet_connected": $internet_connected},
+      "diego_cell": {"instances": $diego_cell_instances, "internet_connected": $internet_connected},
       "diego_database": {"internet_connected": $internet_connected},
       "doppler": {"internet_connected": $internet_connected},
       "ha_proxy": {"internet_connected": $internet_connected},
