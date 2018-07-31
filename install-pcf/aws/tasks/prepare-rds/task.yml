@@ -35,8 +35,6 @@ params:
   DB_LOCKET_PASSWORD:
   DB_SILK_USERNAME:
   DB_SILK_PASSWORD:
-  DB_CREDHUB_USERNAME:
-  DB_CREDHUB_PASSWORD:
 
 run:
   path: pcf-pipelines/install-pcf/aws/tasks/prepare-rds/task.sh
