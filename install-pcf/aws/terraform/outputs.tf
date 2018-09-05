@@ -216,3 +216,9 @@ output "db_password" {
 output "db_database" {
     value = "${aws_db_instance.pcf_rds.name}"
 }
+
+# NAT info
+
+output "NAT_AZ1" {
+    value = "${aws_instance.nat_az1.public_ip}"
+}
