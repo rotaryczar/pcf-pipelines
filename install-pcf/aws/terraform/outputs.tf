@@ -222,3 +222,11 @@ output "db_database" {
 output "NAT_AZ1" {
     value = "${aws_instance.nat_az1.public_ip}"
 }
+
+output "NAT_AZ2" {
+    value = "${aws_instance.nat_az2.public_ip}"
+}
+
+output "NAT_AZ3" {
+    value = "${aws_instance.nat_az3.public_ip}"
+}
