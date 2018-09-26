@@ -145,7 +145,7 @@ cf_resources=$(
     --arg terraform_prefix $terraform_prefix \
     --arg iaas $pcf_iaas \
     --arg diego_cell_instances $DIEGO_CELL_INSTANCES \
-    --argjson internet_connected $INTERNET_CONNECTED \
+    --argjson internet_connected "$INTERNET_CONNECTED" \
     '
     {
       "backup-prepare": {"internet_connected": $internet_connected},
