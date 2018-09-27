@@ -144,7 +144,7 @@ cf_resources=$(
   jq -n \
     --arg terraform_prefix $terraform_prefix \
     --arg iaas $pcf_iaas \
-    --argjson diego_cell_instances $DIEGO_CELL_INSTANCES \
+    --arg diego_cell_instances $DIEGO_CELL_INSTANCES \
     --argjson internet_connected $INTERNET_CONNECTED \
     '
     {
