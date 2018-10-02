@@ -22,4 +22,5 @@ resource "aws_db_instance" "pcf_rds" {
     backup_retention_period = 7
     apply_immediately       = true
     skip_final_snapshot     = true
+    storage_encrypted       = true
 }
